@@ -3,12 +3,12 @@ import { ref, onMounted, nextTick, onBeforeMount } from 'vue'
 
 
 const images = ref([
-    "https://plus.unsplash.com/premium_photo-1675804669860-9e27f22b0681?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1650&q=80",
-    "https://images.unsplash.com/photo-1537346439163-eafb59bdc400?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-    "https://plus.unsplash.com/premium_photo-1675448891094-1c3899f6f67a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    "https://images.unsplash.com/photo-1539634262233-7c0b48ab9503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1425&q=80",
-])
+    "https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_1280.jpg",
+    "https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_1280.jpg",
+    "https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830_1280.jpg",
+    "https://cdn.pixabay.com/photo/2013/07/21/13/00/rose-165819_1280.jpg"
 
+])
 
 // const images = ref([
 //     'img/1.avif',
