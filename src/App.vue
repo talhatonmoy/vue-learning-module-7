@@ -1,5 +1,9 @@
 <script setup>
-import { ref, onMounted, nextTick, onBeforeMount } from 'vue'
+import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue'
+
+
+let slider = null
+const newImage = ref(null);
 
 
 const images = ref([
@@ -10,12 +14,6 @@ const images = ref([
 
 ])
 
-// const images = ref([
-//     'img/1.avif',
-//     'img/2.avif',
-//     'img/3.avif',
-//     'img/4.avif',
-// ])
 
 onMounted(() => {
     slider = new Flickity('.carousel', {
@@ -23,8 +21,7 @@ onMounted(() => {
     });
 })
 
-const newImage = ref(null);
-let slider = null
+
 
 function addNewImage() {
     if (newImage.value) {
@@ -37,8 +34,12 @@ function addNewImage() {
         })
         newImage.value = ''
     }
-    
+
 }
+
+onBeforeUnmount(() => {
+    slider.destroy()
+})
 
 
 </script>
@@ -55,10 +56,23 @@ function addNewImage() {
             </div>
         </div>
         <p>{{ newImage }}</p>
-        <div class="carousel">
-            <div v-for="img, index in images" :key="index" :style="`background:url(${img})`" class=" w-[650px] h-[450px] bg-contain mx-auto bg-center "></div>
+        <div class="carousel parent-div mx-auto">
+            <div v-for="img, index in images" :key="index" :style="`background:url(${img})`"
+                class=" w-[650px] h-[450px] bg-contain mx-auto bg-center "></div>
         </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.parent-div {
+    width: 600px;
+    height: 400px;
+}
+
+.parent-div div {
+    width: 600px;
+    height: 400px;
+    background-color: #ccc;
+
+}
+</style>
