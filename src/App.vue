@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, nextTick, onBeforeMount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const newValue = ref(null)
 
@@ -41,6 +41,11 @@ onMounted(() => {
     theChart = new Chart(context, config)
 })
 
+onBeforeUnmount(() => {
+    if (theChart) {
+        theChart.destroy()
+    }
+})
 
 function updateChart() {
     if (newValue.value) {
@@ -49,6 +54,8 @@ function updateChart() {
         theChart.update()
     }
 }
+
+
 
 
 </script>
